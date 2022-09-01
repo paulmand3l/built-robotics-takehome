@@ -1,0 +1,10 @@
+.App {
+  flex-direction: column;
+  width: 100%;
+  background-color: #e8eef2;
+}
+
+.content {
+  width: 100%;
+  flex-direction: column;
+}

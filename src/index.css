@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: Calibre, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 22px;
+  color: #404040;
+}
+
+h1 {
+  font-family: "Forza A", "Forza B";
+  font-size: 88px;
+  font-weight: 700;
+}
+
+body * {
+  display: flex;
+}
+
+body a {
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+}
