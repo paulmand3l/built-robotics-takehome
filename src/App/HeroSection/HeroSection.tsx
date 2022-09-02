@@ -17,7 +17,7 @@ const HeroSection = (props: HeroSectionProps) => {
       <h1 className={styles.title}>Solve the Jumble</h1>
       <h3 className={styles.subtitle}>
         Enter a word to see what words from{' '}
-        <a href="http://www.mieliestronk.com/corncob_lowercase.txt">
+        <a href="https://github.com/paulmand3l/built-robotics-takehome/blob/main/src/App/JumbleSolver/wordlist.json">
           this corpus
         </a>{' '}
         can be made with only the letters in the input word.

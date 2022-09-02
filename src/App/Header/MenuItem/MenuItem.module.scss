@@ -1,15 +1,36 @@
+@use 'styles/_constants.scss' as *;
+
+
 .MenuItem {
   a {
     font-size: 18px;
     color: rgba(0, 0, 0, 0.75);
-    padding-bottom: 2px;
+    padding-bottom: 0px;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     white-space: nowrap;
+    opacity: 1;
   }
 
   &:hover a {
     border-bottom: 2px solid #111111;
     color: rgba(0, 0, 0, 0.935);
+    padding-bottom: 2px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .MenuItem {
+    a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 40px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      a {
+        color: $primary;
+      }
+    }
   }
 }

@@ -5,8 +5,16 @@
   justify-content: space-between;
   padding: 0 8%;
   position: sticky;
+  z-index: 2;
+}
 
-  * {
-    z-index: 3;
+.logo {
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .logo {
+    padding-right: 16px;
   }
 }

@@ -12,7 +12,7 @@ const Header = (props: HeaderProps) => {
     <div className={styles.Header}>
       <Scrim />
       <nav>
-        <img src={logo} alt="built robotics logo" />
+        <img className={styles.logo} src={logo} alt="built robotics logo" />
         <Menu />
       </nav>
       <Button
