@@ -29,7 +29,7 @@ const Results = (props: ResultsProps) => {
   return (
     <List
       className={styles.Results}
-      height={280}
+      height={240}
       width="100%"
       itemSize={ROW_HEIGHT}
       itemCount={props.words.length}

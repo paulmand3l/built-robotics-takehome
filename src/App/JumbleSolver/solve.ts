@@ -89,6 +89,7 @@ export const solveWithHash = (rawInput: string) => {
 
   return wordlist.filter(
     (word, i) =>
+      word !== input &&
       word.length <= input.length &&
       (hashes[i] === inputHash || inputHash % hashes[i] === big0)
   );
@@ -140,6 +141,7 @@ export const solveWithHist = (rawInput: string) => {
   return wordlist.filter((word, i) => {
     let testLength = word.length;
     if (testLength > input.length) return false;
+    if (word === input) return false;
     const testHist = histograms[i];
     while (testLength--) {
       if (testHist[word[testLength]] > (inputHist[word[testLength]] || 0)) {
