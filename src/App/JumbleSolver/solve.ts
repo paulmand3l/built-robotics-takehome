@@ -17,21 +17,55 @@ const hashWord = (word: string) =>
     .map(getPrimeForChar)
     .reduce((prev, next) => prev * next, BigInt(1));
 
+const histWord = (word: string) => {
+  const histogram: { [key: string]: number } = {};
+  let len = word.length;
+  while (len--) {
+    histogram[word.charAt(len)] = (histogram[word.charAt(len)] || 0) + 1;
+  }
+  return histogram;
+};
+
 const hashes = wordlist.map((word) => hashWord(cleanWord(word)));
+export const solveWithHash = (input: string) => {
+  const inputHash = hashWord(input);
+
+  return wordlist.filter(
+    (word, i) =>
+      word.length <= input.length &&
+      (hashes[i] === inputHash || inputHash % hashes[i] === big0)
+  );
+};
+
+const histograms = wordlist.map((word) => histWord(cleanWord(word)));
+export const solveWithHist = (input: string) => {
+  const inputHist = histWord(input);
+
+  return wordlist.filter((word, i) => {
+    let testLength = word.length;
+    if (testLength > input.length) return false;
+    const testHist = histograms[i];
+    while (testLength--) {
+      if (testHist[word[testLength]] > (inputHist[word[testLength]] || 0)) {
+        return false;
+      }
+    }
+    return true;
+  });
+};
 
 export const solveJumble = (rawInput: string) => {
   const inputWord = cleanWord(rawInput);
-  const inputHash = hashWord(inputWord);
 
-  return wordlist
-    .filter(
-      (word, i) =>
-        word.length <= inputWord.length &&
-        (hashes[i] === inputHash || inputHash % hashes[i] === big0)
-    )
-    .sort((a, b) => {
-      if (a.length > b.length) return -1;
-      if (b.length > a.length) return 1;
-      return a < b ? -1 : 1;
-    });
+  const result =
+    inputWord.length < 120
+      ? solveWithHash(inputWord)
+      : solveWithHist(inputWord);
+
+  return result;
+  // return result.sort((a, b) => {
+  //   if (a.length > b.length) return -1;
+  //   if (b.length > a.length) return 1;
+  //   return a < b ? -1 : 1;
+  // });
 };

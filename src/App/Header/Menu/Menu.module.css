@@ -1,0 +1,17 @@
+.Menu {
+  gap: 40px;
+}
+
+.icon {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .Menu {
+    display: none;
+  }
+
+  .icon {
+    display: flex;
+  }
+}

@@ -1,41 +1,19 @@
 import React from 'react';
-import styles from './Header.module.scss';
 import logo from './assets/built_by_paul.svg';
 import Button, { ButtonVariant } from 'components/Button';
-import MenuItem from './MenuItem';
 import Scrim from './Scrim';
+import Menu from './Menu';
+import styles from './Header.module.scss';
 
 type HeaderProps = {};
 
 const Header = (props: HeaderProps) => {
   return (
     <div className={styles.Header}>
+      <Scrim />
       <nav>
         <img src={logo} alt="built robotics logo" />
-        <ul className={styles.menu}>
-          {[
-            {
-              name: 'Technology',
-              href: 'https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py',
-            },
-            {
-              name: 'Solutions',
-              href: 'https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py',
-            },
-            {
-              name: 'How it Works',
-              href: 'https://www.mathsisfun.com/prime-factorization.html',
-            },
-            {
-              name: 'Safety',
-              href: 'https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py',
-            },
-            { name: 'About', href: 'https://www.mand3l.com/' },
-            { name: 'Careers', href: 'https://resume.mand3l.com' },
-          ].map(({ name, href }) => (
-            <MenuItem key={name} title={name} href={href} />
-          ))}
-        </ul>
+        <Menu />
       </nav>
       <Button
         title="Get in Touch"
@@ -44,7 +22,6 @@ const Header = (props: HeaderProps) => {
           window.open("mailto:paul.mand3l@gmail.com?subject=You're hired!")
         }
       />
-      <Scrim />
     </div>
   );
 };
