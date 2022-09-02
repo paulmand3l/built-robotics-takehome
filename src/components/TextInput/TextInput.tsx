@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './TextInput.module.scss';
 
-const TextInput = (props: React.ComponentPropsWithoutRef<'input'>) => {
+interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {};
+
+const TextInput: React.FC<TextInputProps> = (props) => {
   return (
     <input
       {...props}

@@ -5,7 +5,7 @@ type SectionProps = {
   fullBleed?: boolean;
   backgroundImage: string;
   backgroundColor?: string;
-  children: JSX.Element | JSX.Element[] | string | number;
+  children: React.ReactNode;
 };
 
 const Section = (props: SectionProps) => {
