@@ -1,0 +1,19 @@
+@use 'styles/_constants.scss' as *;
+
+.Footer {
+  background-color: $carbon;
+  color: $smoke;
+  font-size: 18px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  justify-content: center;
+
+  a {
+    color: $smoke;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

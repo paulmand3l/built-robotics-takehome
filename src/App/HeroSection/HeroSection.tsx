@@ -19,7 +19,7 @@ const HeroSection = (props: HeroSectionProps) => {
         <a href="http://www.mieliestronk.com/corncob_lowercase.txt">
           this corpus
         </a>{' '}
-        can be made with only letters from the input word.
+        can be made with only the letters in the input word.
       </h3>
       <JumbleSolver />
     </Section>

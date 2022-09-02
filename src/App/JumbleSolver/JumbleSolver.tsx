@@ -1,8 +1,9 @@
-import TextInput from 'components/TextInput';
 import React, { ChangeEvent, useState } from 'react';
 import deburr from 'lodash.deburr';
+import TextInput from 'components/TextInput';
 import styles from './JumbleSolver.module.scss';
 import { solveJumble } from './solve';
+import Results from './Results';
 
 type JumbleSolverProps = {};
 
@@ -38,13 +39,7 @@ const JumbleSolver = (props: JumbleSolverProps) => {
 
       {words.length ? (
         <div className={styles.output}>
-          <div className={styles.solutions}>
-            {words.slice(0, 10).map((word) => (
-              <span className={styles.word} key={word}>
-                {word}
-              </span>
-            ))}
-          </div>
+          <Results words={words} />
           <div className={styles.performance}>
             {words.length.toLocaleString('en-US')} words found in {duration}ms
           </div>

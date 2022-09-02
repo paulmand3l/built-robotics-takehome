@@ -1,0 +1,12 @@
+.Results {
+  background: white;
+  overflow: scroll;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 14px;
+}
+
+.word {
+  padding: 0 8px;
+}
