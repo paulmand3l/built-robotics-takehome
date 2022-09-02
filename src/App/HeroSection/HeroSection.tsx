@@ -3,6 +3,7 @@ import React from 'react';
 import jobsiteBackground from 'images/job_site_background.webp';
 import styles from './HeroSection.module.css';
 import JumbleSolver from 'App/JumbleSolver';
+import Button from 'components/Button';
 
 type HeroSectionProps = {};
 
@@ -22,6 +23,14 @@ const HeroSection = (props: HeroSectionProps) => {
         can be made with only the letters in the input word.
       </h3>
       <JumbleSolver />
+      <Button
+        title="How it works"
+        onClick={() => {
+          window.open(
+            'https://github.com/paulmand3l/built-robotics-takehome/blob/main/src/App/JumbleSolver/solve.ts'
+          );
+        }}
+      />
     </Section>
   );
 };

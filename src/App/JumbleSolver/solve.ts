@@ -1,6 +1,8 @@
 import wordlist from './wordlist.json';
 import deburr from 'lodash.deburr';
 
+/********* Common Methods **********/
+
 /**
  * Converts a word to a deburred, trimmed, lowercase version of itself
  * Throws if result has any non-lowercase-letter characters
