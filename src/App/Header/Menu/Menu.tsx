@@ -21,11 +21,11 @@ const Menu = (props: MenuProps) => {
           },
           {
             name: 'How it Works',
-            href: 'https://www.mathsisfun.com/prime-factorization.html',
+            href: 'https://github.com/paulmand3l/built-robotics-takehome',
           },
           {
             name: 'Safety',
-            href: 'https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py',
+            href: 'https://github.com/paulmand3l/built-robotics-takehome/blob/main/src/App/JumbleSolver/solve.test.ts',
           },
           { name: 'About', href: 'https://www.mand3l.com/' },
           { name: 'Careers', href: 'https://resume.mand3l.com' },
