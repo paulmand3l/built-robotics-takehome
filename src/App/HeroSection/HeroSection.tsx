@@ -2,6 +2,7 @@ import Section from 'components/Section';
 import React from 'react';
 import jobsiteBackground from 'images/job_site_background.webp';
 import styles from './HeroSection.module.css';
+import JumbleSolver from 'App/JumbleSolver';
 
 type HeroSectionProps = {};
 
@@ -14,9 +15,13 @@ const HeroSection = (props: HeroSectionProps) => {
     >
       <h1 className={styles.title}>Solve the Jumble</h1>
       <h3 className={styles.subtitle}>
-        Enter any scramble of letters to see what words can be made from the
-        selected corpus with those letters.
+        Enter a word to see what words from{' '}
+        <a href="http://www.mieliestronk.com/corncob_lowercase.txt">
+          this corpus
+        </a>{' '}
+        can be made with only letters from the input word.
       </h3>
+      <JumbleSolver />
     </Section>
   );
 };

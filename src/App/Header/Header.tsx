@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import logo from './assets/built_by_paul.svg';
 import Button, { ButtonVariant } from 'components/Button';
 import MenuItem from './MenuItem';
+import Scrim from './Scrim';
 
 type HeaderProps = {};
 
@@ -30,7 +31,7 @@ const Header = (props: HeaderProps) => {
               href: 'https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py',
             },
             { name: 'About', href: 'https://www.mand3l.com/' },
-            { name: 'Careers', href: 'https://resume.mand3l.com' }
+            { name: 'Careers', href: 'https://resume.mand3l.com' },
           ].map(({ name, href }) => (
             <MenuItem key={name} title={name} href={href} />
           ))}
@@ -39,11 +40,11 @@ const Header = (props: HeaderProps) => {
       <Button
         title="Get in Touch"
         variant={ButtonVariant.SECONDARY}
-        hasArrow={true}
         onClick={() =>
           window.open("mailto:paul.mand3l@gmail.com?subject=You're hired!")
         }
       />
+      <Scrim />
     </div>
   );
 };

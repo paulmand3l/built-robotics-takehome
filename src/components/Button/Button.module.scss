@@ -1,3 +1,5 @@
+@use 'styles/_constants.scss' as *;
+
 .Button {
   align-items: center;
   justify-content: space-between;
@@ -5,6 +7,7 @@
   white-space: nowrap;
   font-size: 18px;
   gap: 5px;
+  flex-shrink: 0;
   cursor: pointer;
 
   .icon {
@@ -19,22 +22,22 @@
   }
 
   &.primary {
-    padding: 14px 20px 14px 20px;
-    background-color: #ffd700;
-    color: rgba(0, 0, 0, 0.935);
+    padding: 14px 16px 14px 20px;
+    background-color: $primary;
+    color: $carbon;
 
     &:hover {
-      background-color: #ffe54b;
+      opacity: 0.9;
     }
   }
 
   &.secondary {
     padding: 4px 10px 5px 12px;
-    background-color: #2f2f2f;
-    color: #E8E8E8;
+    background-color: $carbon;
+    color: $smoke;
 
     &:hover {
-      background-color: #111111;
+      opacity: 0.9
     }
 
     .icon {

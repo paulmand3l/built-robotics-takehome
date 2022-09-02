@@ -14,13 +14,13 @@ type ButtonProps = {
   variant?: Variant;
   title: string;
   hasArrow?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Button = ({
   variant = Variant.PRIMARY,
   title,
-  hasArrow = false,
+  hasArrow = true,
   onClick = () => {},
 }: ButtonProps) => {
   const buttonClass = classnames(styles.Button, {

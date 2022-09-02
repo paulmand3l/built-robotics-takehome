@@ -1,0 +1,10 @@
+@use 'styles/_constants.scss' as *;
+
+.TextInput {
+  all: unset;
+  background-color: white;
+  border-bottom: 2px solid black;
+
+  font-size: 22px;
+  padding: 8px 14px;
+}

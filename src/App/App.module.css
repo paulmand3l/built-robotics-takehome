@@ -1,7 +1,9 @@
 .App {
   flex-direction: column;
   width: 100%;
+  height: 100%;
   background-color: #e8eef2;
+  background-image: url('images/job_site_background.webp');
 }
 
 .content {

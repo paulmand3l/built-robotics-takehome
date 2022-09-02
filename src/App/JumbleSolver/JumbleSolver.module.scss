@@ -1,0 +1,43 @@
+@use 'styles/_constants.scss' as *;
+
+.JumbleSolver {
+  flex-direction: column;
+  width: 420px;
+  max-width: 98%;
+
+  input[type="text"] {
+    margin-top: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .output {
+    margin-top: 8px;
+    flex-direction: column;
+
+    .solutions {
+      padding: 4px 8px;
+      background: white;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 5px;
+
+      &::after {
+        content: '';
+        flex: auto;
+      }
+    }
+
+    .performance {
+      padding: 0 8px;
+      font-size: 16px;
+      align-self: flex-end;
+      font-weight: 400;
+      color: rgba($carbon, 0.5);
+    }
+  }
+
+}

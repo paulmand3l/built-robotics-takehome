@@ -19,8 +19,26 @@ body * {
   display: flex;
 }
 
+span, h1, h2, h3, h4, h5, h6, a, li {
+  display: inline;
+}
+
 body a {
   text-decoration: none;
   outline: 0;
   border: 0;
+  padding-bottom: 0px;
+  color: black;
+  border-bottom: 1px solid black;
+  opacity: 0.7;
+  transition: 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    padding-bottom: 1px;
+    opacity: 0.935;
+  }
+}
+
+::selection {
+  background: #ffd600;
 }
