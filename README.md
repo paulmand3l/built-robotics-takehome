@@ -13,7 +13,7 @@ There are a variety of different specific rules you can apply to word jumbles, b
 
 I originally sketched out [solutions in repl.it](https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py) but since I was getting [sub-1-second solution performance](https://www.nngroup.com/articles/response-times-3-important-limits/) and I'm more of a designer anyway, I decided to take things a step further. I ported the solutions over into javascript and made a little react app to host the solution on the web, wrapped in a nice interface very heavily inspired by Built's website.
 
-![mockups](https://user-images.githubusercontent.com/382427/188241350-2fcbbfe0-060e-4caa-9500-73fe1c01e31d.png)
+![mockups](https://raw.githubusercontent.com/paulmand3l/built-robotics-takehome/main/media/ui_mockups.png)
 
 It's fully responsive and has been tested across a variety of screen sizes and resolutions.
 
@@ -53,13 +53,13 @@ Both algorithms work in two parts: pre-processing the input and word list into c
 
 Both algorithms pre-process the word list into comparable entities (computing the product of primes for the "hashing" algorithm and computing the letter histograms for the "histogram" algorithm. I've written this as a separate step so that it can be done offline. In "production", this preprocessing step happens once on page load and the results are stored so ensuing comparisons can avoid re-processing the word list each time.
 
-![preprocessing_performance](https://user-images.githubusercontent.com/382427/188246652-6f7ee637-6643-44db-a8bf-cc400c2bd440.png)
+![preprocessing_performance](https://raw.githubusercontent.com/paulmand3l/built-robotics-takehome/main/media/preprocessor_performance.png)
 
 Generating the hashes and histograms are both O(n) with input string length.
 
 ### Solving
 
-![solution_performance](https://user-images.githubusercontent.com/382427/188245221-a98183de-0f53-41b3-b6e9-b3f6cc584397.png)
+![solution_performance](https://raw.githubusercontent.com/paulmand3l/built-robotics-takehome/main/media/algorithm_performance.png)
 
 The solve step consists of a single round of comparing the input to each word in the list. This implies that for a given input, both algorithms are O(n) with the length of the word list (assuming the different word lists don't have significantly longer or shorter words).
 
