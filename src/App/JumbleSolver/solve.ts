@@ -4,13 +4,11 @@ import deburr from 'lodash.deburr';
 /********* Common Methods **********/
 
 /**
- * Converts a word to a deburred, trimmed, lowercase version of itself
- * Throws if result has any non-lowercase-letter characters
- * @param {string} word - The word to cleaned
- * @returns {string} The deburred, trimmed, lowercased version of the word
+ * Converts a string to a deburred, trimmed, lowercase version of itself
+ * @param {string} word - The string to clean
+ * @returns {string} The deburred, trimmed, lowercased version of the string
  */
-const cleanWord = (word: string): string =>
-  assertAlpha(deburr(word).toLowerCase().trim());
+const clean = (str: string): string => deburr(str).toLowerCase().trim();
 
 /**
  * Throws if input string contains any non-lowercase-letter characters
@@ -55,8 +53,8 @@ const big0 = BigInt(0);
  * @param {string} c - A character to get a prime number for
  * @returns {bigint} The prime number as a BigInt
  */
-const getPrimeForChar = (c: string): bigint =>
-  first26Primes[c.toLowerCase().charCodeAt(0) - 97];
+const getPrimeForLetter = (letter: string): bigint =>
+  first26Primes[letter.toLowerCase().charCodeAt(0) - 97];
 
 /**
  * This function generates a prime hash for a given word
@@ -65,18 +63,18 @@ const getPrimeForChar = (c: string): bigint =>
  * @example
  * // returns 30n
  * hashWord('cab');
- * @param {string} word - A word to hash
+ * @param {string} letters - A string of letters to hash
  * @returns {bigint} The hash
  */
-const hashWord = (word: string): bigint =>
-  word
+export const hashLetters = (letters: string): bigint =>
+  letters
     .split('')
-    .map(getPrimeForChar)
+    .map(getPrimeForLetter)
     .reduce((prev, next) => prev * next, BigInt(1));
 
 // Pre-compute these for performance so we don't have to
 // re-do this work every time we want to solve a new jumble
-const hashes = wordlist.map((word) => hashWord(cleanWord(word)));
+const hashes = wordlist.map((word) => hashLetters(clean(word)));
 
 /**
  * Solves a word jumble using the hashing strategy described above
@@ -84,8 +82,9 @@ const hashes = wordlist.map((word) => hashWord(cleanWord(word)));
  * @returns {string[]} All the words in the corpus that can be made with only characters from the input string
  */
 export const solveWithHash = (rawInput: string) => {
-  const input = cleanWord(rawInput);
-  const inputHash = hashWord(input);
+  const input = assertAlpha(clean(rawInput));
+  const inputHash = hashLetters(input);
+  console.log(inputHash);
 
   return wordlist.filter(
     (word, i) =>
@@ -116,7 +115,7 @@ export const solveWithHash = (rawInput: string) => {
  * @param {string} word - The word to make a letter histogram of
  * @returns - The letter histogram
  */
-const histWord = (word: string) => {
+export const histWord = (word: string) => {
   const histogram: { [key: string]: number } = {};
   let len = word.length;
   while (len--) {
@@ -127,7 +126,7 @@ const histWord = (word: string) => {
 
 // Pre-compute these for performance so we don't have to
 // re-do this work every time we want to solve a new jumble
-const histograms = wordlist.map((word) => histWord(cleanWord(word)));
+const histograms = wordlist.map((word) => histWord(clean(word)));
 
 /**
  * Solves a word jumble using the letter histogram strategy described above
@@ -135,7 +134,7 @@ const histograms = wordlist.map((word) => histWord(cleanWord(word)));
  * @returns {string[]} All the words in the corpus that can be made with only characters from the input string
  */
 export const solveWithHist = (rawInput: string) => {
-  const input = cleanWord(rawInput);
+  const input = assertAlpha(clean(rawInput));
   const inputHist = histWord(input);
 
   return wordlist.filter((word, i) => {
@@ -165,6 +164,6 @@ export const solveWithHist = (rawInput: string) => {
  *  from the input string of letters
  */
 export const solveJumble = (rawJumble: string) => {
-  const jumble = cleanWord(rawJumble);
+  const jumble = clean(rawJumble);
   return jumble.length < 120 ? solveWithHash(jumble) : solveWithHist(jumble);
 };
