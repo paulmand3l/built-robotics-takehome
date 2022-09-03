@@ -1,4 +1,4 @@
-"""A module to solve word jumbles using prime numbers
+"""A script to solve word jumbles using prime numbers
 
 This algorithm leverages prime factorization to compare the input word
 with the test word. I compute hashes for each word based on the product
