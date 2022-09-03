@@ -3,11 +3,15 @@
 This algorithm leverages prime factorization to compare the input word
 with the test word. I compute hashes for each word based on the product
 of prime numbers corresponding to the characters in the word.
-  E.g. "cab" => 5 * 2 * 3 = 30
+
+E.g. "cab" => 5 * 2 * 3 = 30
+
 By then checking divisibility, I can test whether one hash represents a
 subset of the characters in another hash
-  E.g. "ba" => 3 * 2 = 6, since 30 is divisible by 6,
-    "ba" must be a subset of "cab"
+
+E.g. "ba" => 3 * 2 = 6, since 30 is divisible by 6, "ba" must be a
+subset of "cab"
+
 These numbers can get quite large, but as of Python 3, python supports
 integers of arbitrary size.
 

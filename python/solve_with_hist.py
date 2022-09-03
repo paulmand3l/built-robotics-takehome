@@ -3,12 +3,15 @@
 This algorithm compares letter counts in the input word with the test
 word. It uses a dict for each word that maps each letter in the word
 to the number of times the letter appears.
-  E.g. "cab" => { a: 1, b: 1, c: 1}
+
+E.g. "cab" => { a: 1, b: 1, c: 1}
+
 To test against the input I compare the values in the two lookup tables
 for each letter in the word under test
-  E.g. "ba" => { a: 1, b: 1 }, since the number of a's and b's in this
-  lookup table is less than the number of a's and b's in the lookup
-  table for "cab", "ba" must be a subset of "cab"
+
+E.g. "ba" => { a: 1, b: 1 }, since the number of a's and b's in this
+lookup table is less than the number of a's and b's in the lookup
+table for "cab", "ba" must be a subset of "cab"
 
 Complexity O(n x m)
 - n is the length of the word list to check
