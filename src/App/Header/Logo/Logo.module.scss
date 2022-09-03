@@ -1,0 +1,11 @@
+.logo {
+  padding-right: 40px;
+  cursor: pointer;
+  transition: 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media screen and (max-width: 640px) {
+  .logo {
+    padding-right: 16px;
+  }
+}

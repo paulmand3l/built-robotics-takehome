@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './assets/built_by_paul.svg';
 import Button, { ButtonVariant } from 'components/Button';
 import Scrim from './Scrim';
 import Menu from './Menu';
 import styles from './Header.module.scss';
+import Logo from './Logo';
 
 type HeaderProps = {};
 
@@ -12,7 +12,7 @@ const Header = (props: HeaderProps) => {
     <div className={styles.Header}>
       <Scrim />
       <nav>
-        <img className={styles.logo} src={logo} alt="built robotics logo" />
+        <Logo />
         <Menu />
       </nav>
       <Button

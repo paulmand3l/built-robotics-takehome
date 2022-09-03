@@ -7,14 +7,3 @@
   position: sticky;
   z-index: 2;
 }
-
-.logo {
-  padding-right: 40px;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 640px) {
-  .logo {
-    padding-right: 16px;
-  }
-}
