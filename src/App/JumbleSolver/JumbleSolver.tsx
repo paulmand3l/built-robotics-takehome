@@ -28,7 +28,6 @@ const JumbleSolver = (props: JumbleSolverProps) => {
     const start = Date.now();
     const words = solveJumble(cleanInput);
     const delta = Date.now() - start;
-    console.log(`Solved ${cleanInput} in ${delta}ms`);
     setDuration(Date.now() - start);
     setWords(words);
   };

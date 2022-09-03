@@ -25,7 +25,6 @@ const Menu = (props: MenuProps) => {
 
   useEscape(
     useCallback(() => {
-      console.log('callback called', isMenuOpen);
       if (isMenuOpen) {
         setMenuOpen(false);
       }

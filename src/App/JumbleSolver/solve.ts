@@ -84,7 +84,7 @@ const hashes = wordlist.map((word) => hashLetters(clean(word)));
 export const solveWithHash = (rawInput: string) => {
   const input = assertAlpha(clean(rawInput));
   const inputHash = hashLetters(input);
-  console.log(inputHash);
+  console.log('Hashed', input, 'to', inputHash);
 
   return wordlist.filter(
     (word, i) =>
