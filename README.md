@@ -19,7 +19,7 @@ It's fully responsive and has been tested across a variety of screen sizes and r
 
 ## Solution(s)
 
-To actually solve the word jumble, I tried three approaches. I initially sketched these out in python on [repl.it](https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py) to get a baseline performance comparison and get a feel for the algorithms. The three algorithms I tried are as follows:
+To actually solve the word jumble, I tried two approaches. I initially sketched these out in python on [repl.it](https://replit.com/@PaulMandel/VioletredTanUpgrade#main.py) to get a baseline performance comparison and get a feel for the algorithms. The three algorithms I tried are as follows:
 
 1. Prime factorization
 
